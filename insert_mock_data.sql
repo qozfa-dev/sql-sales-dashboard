@@ -49,3 +49,15 @@ VALUES
 	(7, 1, 2, 560.00),
 	(9, 6, 1, 25.00);
 
+INSERT INTO payments (order_id, payment_date, payment_method, payment_status)
+VALUES 
+    (1, '2024-01-01', 'Credit card', 'Completed'),
+    (2, '2024-02-15', 'Credit card', 'Completed'),
+    (3, '2024-03-07', 'Paypal', 'Completed'),
+    (4, '2021-09-13', 'Debit card', 'Completed'),
+    (5, '2020-10-14', 'Apple pay', 'Completed'),
+    (6, '2023-01-03', 'Paypal', 'Completed'),
+    (7, '2020-01-02', 'Google pay', 'Completed'),
+    (8, '2025-04-07', 'Apple pay', 'Pending'),
+    (9, '2022-02-02', 'Apple pay', 'Completed');
+

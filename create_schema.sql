@@ -36,14 +36,3 @@ CREATE TABLE payments (
 	payment_status VARCHAR(50)
 );
 
-INSERT INTO order_items (order_id, product_id, quantity, item_price)
-VALUES
-	(1, 1, 2, 560.00),
-	(2, 2, 1, 139.99),
-	(3, 3, 4, 7.99),
-	(4, 4, 1, 349.99),
-	(5, 5, 2, 230.00),
-	(6, 6, 1, 25.00),
-	(7, 7, 1, 4.99),
-	(8, 8, 1, 2.50),
-	(9, 9, 2, 6.00);
