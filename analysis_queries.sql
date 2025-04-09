@@ -34,6 +34,62 @@ JOIN orders o ON c.customer_id = o.customer_id
 GROUP BY c.customer_id, c.name
 ORDER BY total_spent DESC;
 
+/*
+"Timothy Carpenter"	1127.99
+"Susan Macallisater"	1100.00
+"Dylan Mustafa"	460.00
+"Michael Myers"	349.99
+"Dom Smith"	230.00
+"Patrick Star"	139.99
+"Rachel Johnson"	62.50
+"Musa Yusuf"	25.00
+"Sally Naomi"	19.96
+*/
+
+-- Monthly sales trends
+SELECT EXTRACT(MONTH FROM order_date) AS MONTH,
+    EXTRACT(YEAR FROM order_date) AS YEAR,
+    SUM(total_amount) AS total_sales
+FROM orders
+GROUP BY year, month
+ORDER BY year DESC, month DESC;
+
+/*
+4	2025	460.00
+3	2024	62.50
+2	2024	230.00
+1	2024	1127.99
+1	2023	19.96
+2	2022	25.00
+9	2021	349.99
+10	2020	139.99
+12	2019	1100.00
+*/
+
+-- Top 5 products by total quantity sold
+SELECT p.name AS product_name,
+    SUM(oi.quantity) AS total_quantity_sold
+FROM order_items oi
+JOIN products p ON oi.product_id = p.product_id
+GROUP BY p.name
+ORDER BY total_quantity_sold DESC
+LIMIT 5;
+
+/*
+"Chocolate"	10
+"Laptop"	4
+"Washing detergent"	4
+"Stationary"	3
+"Doorbell"	2
+*/
+
+
+
+
+
+
+
+
 
 
 
